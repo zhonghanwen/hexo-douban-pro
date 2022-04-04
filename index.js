@@ -28,11 +28,19 @@ hexo.extend.generator.register('games', function (locals) {
   return require('./lib/games-generator').call(this, locals);
 });
 
+hexo.extend.generator.register('musics', function (locals) {
+  if (!this.config.douban || !this.config.douban.builtin) {
+    return;
+  }
+  return require('./lib/musics-generator').call(this, locals);
+});
+
 var options = {
   options: [
     { name: '-b, --books', desc: 'Generate douban books only' },
     { name: '-m, --movies', desc: 'Generate douban movies only' },
-    { name: '-g, --games', desc: 'Generate douban games only' }
+    { name: '-g, --games', desc: 'Generate douban games only' },
+    { name: '-i, --musics', desc: 'Generate douban musics only' }
   ]
 };
 
@@ -50,8 +58,12 @@ hexo.extend.console.register('douban', 'Generate pages from douban', options, fu
   if (args.g || args.games) {
     names.push("games");
   }
+
+  if (args.i || args.musics) {
+    names.push("musics");
+  }
   if (names.length === 0) {
-    names.push("books", "movies", "games");
+    names.push("books", "movies", "games", "musics");
   }
 
   var doubanLoadingPath = '/assets/douban-loading.gif';

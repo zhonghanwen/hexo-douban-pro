@@ -22,6 +22,15 @@
     border-bottom: 1px #ddd solid;
 }
 
+.hexo-douban-item2 {
+    padding-bottom: 10px;
+    position: relative;
+    clear: both;
+    min-height: 120px;
+    padding: 10px 0;
+    border-bottom: 1px #ddd solid;
+}
+
 @media screen and (max-width: 600px) {
     .hexo-douban-item {
         width: 100%;
