@@ -10,6 +10,13 @@
 
 [![NPM](https://nodei.co/npm/hexo-douban-pro.png)](https://nodei.co/npm/hexo-douban-pro/)
 
+## 环境要求
+* Node版本不大于10，否则会爬取不了数据。
+* Node版本不大于10，否则会爬取不了数据。
+* Node版本不大于10，否则会爬取不了数据。
+
+使用vercel + Hexo的话，在vercel设置选择中找到Node版本选择10即可。
+
 ## 安装
 
 ``` bash
